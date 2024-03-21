@@ -4,7 +4,20 @@ import blob from "./Images/blob.png";
 import Menu from "./Pages/Menu";
 
 function App() {
-  const [isStarted, setIsStarted] = useState(true);
+  const [isStarted, setIsStarted] = useState(false);
+  const [isCount, setIsCount] = useState(0)
+  const [isCorrect, setIsCorrect] = useState(0)
+  const [isChecked, setIsChecked] = useState(false)
+  const [isQuestion, setIsQuestion] = useState()
+
+
+   function starting() {
+    setIsStarted(i => !i)
+   }
+
+
+
+
   return (
     <div className="App">
       <div className="Appcontainer">
@@ -16,7 +29,9 @@ function App() {
               </div>
             </div>
           ) : (
-            <Menu />
+            <Menu 
+            
+            starting={starting}/>
           )}
         </div>
         <div className="yellowblob">
